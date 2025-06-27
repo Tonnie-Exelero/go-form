@@ -1,0 +1,17 @@
+@use "../abstracts" as a;
+
+.footer {
+  & p {
+    font-family: a.$font-family-primary;
+    font-size: a.$font-size-xxs;
+    font-weight: a.$font-weight-normal;
+    line-height: a.$spacing-lg;
+    color: a.$color-text-primary;
+    margin: 0;
+    text-align: center;
+
+    & a {
+      color: a.$color-text-primary;
+    }
+  }
+}

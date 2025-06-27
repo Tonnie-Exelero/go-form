@@ -1,0 +1,20 @@
+@use "../abstracts" as a;
+
+.callback {
+  &__title {
+    font-family: a.$font-family-primary;
+    font-size: a.$font-size-base;
+    font-weight: a.$font-weight-semibold;
+    line-height: 1.5rem;
+    text-align: center;
+    padding-block: a.$spacing-lg;
+
+    &.success {
+      color: a.$color-success;
+    }
+
+    &.error {
+      color: a.$color-error;
+    }
+  }
+}

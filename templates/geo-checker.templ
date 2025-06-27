@@ -1,0 +1,34 @@
+package templates
+
+templ GeoChecker(data GeoData) {
+	@Base() {
+		<div class="container">
+			<p class="enquire__now-title">Let's start with your postcode...</p>
+
+			<div id="enquire__now-form" class="enquire__now-form">
+				<form method="GET" action="/geo-check">
+					@PostcodePartial("")
+
+					if data.Postcode != "" && !data.IsAllowed {
+						<div class="postcode-disallowed">
+							<i class="fa-solid fa-circle-exclamation"></i>
+							<p>This provider is not currently accepting enquiries on this site from { data.Locality }, { data.State }, { data.Postcode }.</p>
+						</div>
+					}
+
+					<input type="hidden" id="courseid" name="courseid" value={ data.CourseID } />
+
+					<div class="form-row">
+						<button type="submit" class="enquire__now-btn">
+							if data.Postcode != "" && !data.IsAllowed {
+								Try Different Postcode
+							} else {
+								Enquire Now
+							}
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	}
+}

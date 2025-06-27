@@ -1,0 +1,18 @@
+package templates
+
+type GeoData struct {
+    Restriction bool
+    CourseID    string
+    Postcode    string
+    Locality    string
+    State       string
+    IsAllowed   bool
+}
+
+templ Home(data GeoData) {
+	if data.Restriction {
+		@GeoChecker(data)
+	} else {
+		@Form(data)
+	}
+}

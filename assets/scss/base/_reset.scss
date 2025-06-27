@@ -1,0 +1,56 @@
+@use "../abstracts" as a;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: a.$font-family-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  color: a.$color-text-primary;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: a.$color-background;
+  @include a.flex-column();
+  gap: a.$spacing-lg;
+  padding: a.$spacing-xl;
+  border-radius: a.$border-radius-md;
+  box-shadow: a.$shadow-md;
+}
+
+// Utility classes
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  @include a.flex-column();
+  gap: a.$spacing-md;
+}
+
+.carousel {
+  padding-inline: a.$spacing-sm;
+  @include a.horizontal-scrollable;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Optional: hide scrollbar */
+}

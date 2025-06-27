@@ -1,0 +1,10 @@
+package templates
+
+templ PostcodePartial(postCode string) {
+	<div class="form-row">
+		<div class="input-flex">
+			<i class="fa-solid fa-location-dot"></i>
+			<input type="text" id="location" name="location" value={ postCode } placeholder="Enter Postcode" />
+		</div>
+	</div>
+}

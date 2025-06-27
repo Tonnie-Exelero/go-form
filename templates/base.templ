@@ -1,0 +1,25 @@
+package templates
+
+templ Base() {
+	@App("Enquire Now Microservice") {
+		<main>
+			<div class="header">
+				<div class="header__logo">
+					<img src={ "/assets/images/training.svg"} alt="Brand Logo" class="header__logo-image"/>
+				</div>
+
+				<button class="header__close mf-has-url" hx-get="/close-modal">
+					<i class="fa-solid fa-xmark"></i>
+				</button>
+			</div>
+			<div id="dynamic-content">
+				<div class="mf-container">
+					{ children... }
+				</div>
+			</div>
+			<div class="footer">
+				<p>By submitting this enquiry I accept the “<a href="#">Privacy Policy</a>” and “<a href="#">Terms of Use</a>”</p>
+			</div>
+		</main>		
+	}
+}

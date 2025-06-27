@@ -1,0 +1,24 @@
+package templates
+
+type CallbackData struct {
+	Success    bool
+	Title      string
+	Message    string
+	EnquiryID  int
+	CourseID   int
+	CourseUUID string
+	Error      string
+	ErrorCode  string
+}
+
+templ Callback(data CallbackData) {
+	@Base() {
+		<div class="container">
+			if data.Success {
+				<p class="callback__title success">🎉 Your enquiry has been submitted successfully!</p>
+			} else {
+				<p class="callback__title error">{ data.Error }</p>
+			}
+		</div>
+	}
+}

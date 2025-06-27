@@ -1,0 +1,27 @@
+package templates
+
+templ GeoForm(data GeoData) {
+	@Base() {
+		<div class="container">
+			<p class="enquire__now-title">Let's start with your postcode...</p>
+
+			<div id="enquire__now-form" class="enquire__now-form">
+				<form method="GET" action="/submit-form">
+					@PostcodePartial(data.Postcode)
+
+					<p class="enquire__now-title">Fill in your details to download your free course guide.</p>
+
+					@FormPartial(true)
+
+					<input type="hidden" id="courseid" name="courseid" value={ data.CourseID } />
+
+					<div class="form-row">
+						<button type="submit" class="enquire__now-btn">
+							Enquire Now
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	}
+}

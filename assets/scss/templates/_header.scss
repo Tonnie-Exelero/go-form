@@ -1,0 +1,35 @@
+@use "../abstracts" as a;
+
+.header {
+  @include a.flex-between;
+  gap: a.$spacing-3xl;
+  position: relative;
+
+  &__logo {
+    @include a.flex-start;
+  }
+
+  &__close {
+    display: none !important; // TODO: Update this later
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: a.$spacing-2xl;
+    height: a.$spacing-2xl;
+    border-radius: 50%;
+    background: transparent;
+    color: a.$color-secondary;
+    font-size: 1.5rem;
+    font-weight: a.$font-weight-normal;
+    @include a.flex-center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    z-index: 2;
+
+    &:hover {
+      color: a.$color-text-primary;
+    }
+  }
+}

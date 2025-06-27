@@ -1,0 +1,87 @@
+package templates
+
+templ FormPartial(isGeo bool) {
+	<div class="form-row">
+		<div class="input-flex">
+			<i class="fa-solid fa-user"></i>
+			<input type="text" id="firstname" name="firstname" value="" placeholder="First Name" />
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="input-flex">
+			<i class="fa-solid fa-user"></i>
+			<input type="text" id="lastname" name="lastname" value="" placeholder="Last Name" />
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="input-flex">
+			<i class="fa-solid fa-phone"></i>
+			<input type="text" id="phone" name="phone" value="" placeholder="Phone Number" />
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="input-flex">
+			<i class="fa-solid fa-envelope"></i>
+			<input type="email" id="email" name="email" value="" placeholder="Email" />
+		</div>
+	</div>
+
+	if !isGeo {
+		<div class="form-row">
+			<div class="input-flex">
+				<i class="fa-solid fa-location-dot"></i>
+				<input type="text" id="location" name="location" value="" placeholder="Suburb or Postcode" />
+			</div>
+		</div>
+	}
+
+	<div class="form-row">
+		<label for="education">Highest level of education?</label>
+		<div class="input-flex">
+			<i class="fa-solid fa-graduation-cap"></i>
+			<select id="education" name="education" aria-placeholder="Highest level of education?">
+				<option value="">-- Select --</option>
+				<option value="Secondary school graduate">Secondary school graduate</option>
+				<option value="Certificate I">Certificate I</option>
+				<option value="Certificate II">Certificate II</option>
+				<option value="Certificate III">Certificate III</option>
+				<option value="Certificate IV">Certificate IV</option>
+				<option value="Diploma">Diploma</option>
+				<option value="Undergraduate">Undergraduate</option>
+				<option value="Postgraduate">Postgraduate</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<label for="startdate">When would you like to start?</label>
+		<div class="input-flex">
+			<i class="fa-solid fa-calendar-days"></i>
+			<select id="startdate" name="startdate" aria-placeholder="When would you like to start?">
+				<option value="">-- Select --</option>
+				<option value="ASAP">ASAP</option>
+				<option value="In the next 2 months">In the next 2 months</option>
+				<option value="Within 6 months">Within 6 months</option>
+				<option value="Not anytime soon">Not anytime soon</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<label for="reason">Reason for enquiry?</label>
+		<div class="input-flex">
+			<i class="fa-solid fa-circle-question"></i>
+			<select id="reason" name="reason" aria-placeholder="Reason for enquiry?">
+				<option value="">-- Select --</option>
+				<option value="Ready to enrol">Ready to enrol</option>
+				<option value="Researching study options">Researching study options</option>
+				<option value="Need price information">Need price information</option>
+				<option value="Looking to get advice">Looking to get advice</option>
+				<option value="Other">Other</option>
+			</select>
+		</div>
+	</div>
+}
