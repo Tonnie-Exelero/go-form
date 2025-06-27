@@ -20,7 +20,7 @@ body {
   text-rendering: optimizeLegibility;
   line-height: 1.6;
   color: a.$color-text-primary;
-  background-color: #f8fafc;
+  background-color: transparent;
   margin: 0;
   padding: 0;
 }
@@ -32,8 +32,6 @@ main {
   @include a.flex-column();
   gap: a.$spacing-lg;
   padding: a.$spacing-xl;
-  border-radius: a.$border-radius-md;
-  box-shadow: a.$shadow-md;
 }
 
 // Utility classes
